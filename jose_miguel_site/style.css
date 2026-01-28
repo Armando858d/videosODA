@@ -1,0 +1,623 @@
+:root {
+    --bg-color: #0d0d12;
+    /* Deep Navy/Black */
+    --text-color: #e0e0e0;
+    --accent-color: #d4af37;
+    /* Metallic Gold */
+    --accent-hover: #b59226;
+    --card-bg: #1a1a20;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --border-radius: 4px;
+    /* Sharp/Formal corners */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(13, 13, 18, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.oda-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    letter-spacing: 2px;
+}
+
+.contact-btn {
+    border: 1px solid var(--accent-color);
+    padding: 10px 25px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    /* Maintain the exact 16:9 aspect ratio of the 4K image (3840x2160) */
+    aspect-ratio: 16/9;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Improved overlay with a subtle golden/warm tint to match 'Nostalgia' */
+    background:
+        linear-gradient(to bottom, rgba(13, 13, 18, 0.2), rgba(13, 13, 18, 0.7)),
+        url('miguel.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Texture overlay for 'Nostalgia' vibe - old photo feel */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle grain/noise */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Ensure text is above the noise overlay */
+}
+
+.main-title {
+    font-size: 5vw;
+    /* Responsive font based on viewport width */
+    color: var(--text-color);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.5vw;
+    /* Responsive subtitle */
+    color: #ffffff;
+    /* Pure white for better visibility */
+    font-weight: 600;
+    /* Bolder text */
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    /* using em for relative scaling */
+    margin-bottom: 2vw;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    /* Strong shadow for contrast against image */
+}
+
+/* Media query to ensure text doesn't get TOO small on mobile */
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 8vw;
+        /* Slightly larger on mobile for readability */
+    }
+
+    .subtitle {
+        font-size: 3vw;
+        letter-spacing: 1px;
+    }
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 0 auto;
+}
+
+/* Video Section */
+.video-section {
+    padding: 80px 0;
+    text-align: center;
+    background: var(--bg-color);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 2px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+}
+
+.video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Formal Frame styling */
+    border: 2px solid var(--accent-color);
+    outline: 8px solid #202026;
+    /* Dark matte */
+    box-shadow:
+        0 0 0 9px var(--accent-color),
+        /* Outer gold rim */
+        0 20px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Custom Player Styles */
+.player-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper.playing .player-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.play-btn {
+    background: rgba(212, 175, 55, 0.8);
+    color: var(--bg-color);
+    border: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    /* Visual center for play icon */
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    background: var(--accent-color);
+}
+
+.player-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover .player-controls,
+.video-wrapper.paused .player-controls {
+    opacity: 1;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.progress-bar-container {
+    flex-grow: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    position: relative;
+    border-radius: 2px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--accent-color);
+    width: 0%;
+    border-radius: 2px;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.progress-bar-container:hover .progress-bar::after {
+    opacity: 1;
+}
+
+.video-placeholder {
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.video-placeholder i {
+    font-size: 4rem;
+    opacity: 0.8;
+}
+
+.video-caption {
+    margin-top: 20px;
+    font-style: italic;
+    color: rgba(224, 224, 224, 0.6);
+    font-family: var(--font-heading);
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 0;
+    background: var(--secondary-bg);
+}
+
+.section-desc {
+    text-align: center;
+    margin-bottom: 50px;
+    color: rgba(224, 224, 224, 0.8);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.card-image {
+    height: 250px;
+    background: #2a2a30;
+    position: relative;
+}
+
+/* Generic pattern for placeholders */
+.placeholder-img {
+    background-image: repeating-linear-gradient(45deg, #2a2a30 25%, #303036 25%, #303036 50%, #2a2a30 50%, #2a2a30 75%, #303036 75%, #303036 100%);
+    background-size: 20px 20px;
+}
+
+.card-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.action-container {
+    text-align: center;
+}
+
+.main-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--accent-color);
+    padding: 15px 40px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--accent-color);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.main-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--accent-color);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.main-btn:hover {
+    color: var(--bg-color);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+.main-btn:hover::before {
+    width: 100%;
+}
+
+
+/* Footer */
+.main-footer {
+    padding: 60px 0 30px;
+    text-align: center;
+    background: #050508;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--accent-color);
+    /* Removed border-radius for more formal look, or use slight rounding */
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: rotate(360deg);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+/* Responsive */
+@media (max-width: 900px) {
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .video-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* .hero height handled by aspect-ratio globally */
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-title::after {
+        width: 60%;
+    }
+
+    .video-wrapper {
+        aspect-ratio: 16/9;
+        width: 100%;
+        /* Simplify frame for mobile to avoid cropping */
+        outline: 4px solid #202026;
+        box-shadow:
+            0 0 0 5px var(--accent-color),
+            0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-logo h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Floating WhatsApp Button - Elegant Box with Green Accent */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    /* Elegant Dark Glass style */
+    background: rgba(13, 13, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid #25d366;
+    /* Green Border */
+    color: #25d366;
+    /* Green Text */
+    padding: 12px 25px;
+    border-radius: 4px;
+    /* Sharp formal corners */
+    font-weight: 600;
+    font-family: var(--font-heading);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.whatsapp-float i {
+    font-size: 1.4rem;
+    color: #25d366;
+}
+
+/* Hover Effect */
+.whatsapp-float:hover {
+    transform: translateY(-5px);
+    background: #25d366;
+    /* Green background on hover */
+    color: var(--bg-color);
+    /* Dark text on green background */
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+    border-color: #25d366;
+}
+
+.whatsapp-float:hover i {
+    color: var(--bg-color);
+}
+
+@media (max-width: 600px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 0.75rem;
+    }
+
+    .wa-text {
+        display: inline;
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jose Miguel - Extension ODA. Impresión 3D personalizada, caricaturas y arte nostálgico.">
+    <title>Jose Miguel | ODA Extension</title>
+    <!-- Google Fonts: Playfair Display (Nostalgic/Formal) and Montserrat (Business) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation / Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <!-- Placeholder for ODA Logo -->
+            <div class="oda-logo">ODA</div>
+        </div>
+        <nav>
+            <a href="https://armando858d.github.io/ODA/index.html" class="contact-btn">Inicio</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="main-title">JOSE MIGUEL</h1>
+            <p class="subtitle">Caricatura • Nostalgia • Personalizado</p>
+            <div class="divider"></div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+
+            <div class="video-wrapper custom-player">
+                <video src="mig.mp4" id="customVideo" style="width:100%; height:100%; object-fit: cover;"></video>
+                <div class="player-overlay" id="playerOverlay">
+                    <button class="play-btn" id="playBtn"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <div class="player-controls" id="playerControls">
+                    <button class="control-btn" id="miniPlayBtn"><i class="fa-solid fa-play"></i></button>
+                    <div class="progress-bar-container" id="progressBarContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="video-caption">Creación personalizada, acabado profesional.</p>
+            <br>
+            <div class="action-container">
+                <a href="https://armando858d.github.io/ODA/proyectos.html" class="main-btn">
+                    Ver Galería Completa en ODA <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section Removed as requested -->
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <h2>ODA</h2>
+                <p>Calidad 3D que impresiona</p>
+            </div>
+            <div class="social-links">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/524492795557?text=Hola%20ODA%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20impresi%C3%B3n%203D."
+                    target="_blank" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/oda858dj?igsh=MXF3OTl0dzBpODR0eA==" target="_blank"
+                    title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/ServiceODA" target="_blank" title="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@oda858d?_r=1&_t=ZS-93NfFNAv3mZ" target="_blank" title="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2026 Jose Miguel & ODA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/524492795557?text=Hola%20ODA%2C%20necesito%20una%20cotizaci%C3%B3n%20express%20para%20una%20impresi%C3%B3n%203D."
+        class="whatsapp-float" target="_blank" title="Cotización Express 24/7">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="wa-text">COTIZACIÓN EXPRESS 24/7</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
